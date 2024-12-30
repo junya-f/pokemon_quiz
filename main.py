@@ -7,7 +7,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-#id生成する個数の指定。重複のないランダムなIDを生成する
+#１５１までのポケモンidをランダムに取得・APIを叩いてデータを取得する。
 @app.get("/pokemon/quiz")
 async def pokemon_quiz():
     ids = random.sample(range(1, 152), 3)
@@ -38,6 +38,8 @@ if __name__ == "__main__":
     print("APIからポケモンデータを取得中")
     result = fetch_pokemon_data(random_ids)
     print(f"取得結果: {result}")
+    
+
 
 
 
